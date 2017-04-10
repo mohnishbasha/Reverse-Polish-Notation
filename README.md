@@ -61,9 +61,10 @@ instruction on how to compile (if necessary) and run the application.
 * Bootstrap for stylesheets
 
 # How to run
-* cd to the extracted folder.
+* git clone https://github.com/mohnishbasha/Reverse-Polish-Notation.git 
+* cd to the cloned folder.
 * chmod +x sbt && chmod +x sbt-dist/bin/sbt 
 * execute sbt run: ./sbt run
 * access http://127.0.0.1:9000/api
-* first time access will ask you to run SQL script. Click on Apply Script button.
+* first time access will ask you to run SQL script due to ebean integration. Click on Apply Script button.
 * Explore the /api for details on various available apis. You can use the swagger interface to test endpoints as well.
