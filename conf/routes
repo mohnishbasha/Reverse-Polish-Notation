@@ -1,0 +1,17 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An controller showing a sample home page
+GET     /                                 controllers.AppController.index
+
+GET     /rpn                              controllers.AppController.calculateRPN(op :models.OperatorQueryString)
+GET     /reverse_polish_notation          controllers.AppController.calculate(op :models.OperatorQueryString)
+GET     /testrpn                          controllers.AppController.executeTest
+GET     /records                          controllers.AppController.getAllRecords
+GET     /dashboard                        controllers.AppController.dashboardView
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file                controllers.Assets.versioned(path="/public", file: Asset)
+GET 	/api						 controllers.Assets.at(path="/public", file="api.html")
+GET     /docs/swagger.json           controllers.ApiHelpController.getResources

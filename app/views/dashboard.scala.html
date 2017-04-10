@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analytics</title>
+    <link href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")" rel="stylesheet" type="text/css"/>
+	<link href="@routes.Assets.versioned("stylesheets/bootstrap-theme.min.css")" rel="stylesheet" type="text/css"/>
+	<link href="@routes.Assets.versioned("stylesheets/main.css")" rel="stylesheet" type="text/css"/>
+	<script src="@routes.Assets.versioned("javascripts/jquery.min.js")" type="text/javascript" ></script>
+	<script src="@routes.Assets.versioned("javascripts/bootstrap.min.js")" type="text/javascript" ></script>
+	<script src="@routes.Assets.versioned("javascripts/knockout-min.js")" type="text/javascript" ></script>
+	<script src="@routes.Assets.versioned("javascripts/knockout.mapping.min.js")" type="text/javascript" ></script>
+	<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js" type="text/javascript" ></script>
+	<link href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
+</head>
+<body> 
+
+ <nav class="navbar navbar-default" style="padding: 15px;margin: 1px;min-height: 40px;">
+  <span style="font-size: 1.2em;">Analytics: Reverse Polish Notation</span>
+ </nav>
+ 
+<div class="container-fluid padded" >
+
+ <!-- table -->
+     <div class="row-fluid">
+		  <div class="col-lg-12" style="padding-left: 0px;">
+			<section class="box">
+				 <div class="table-responsive table-padding">
+	                <table class="table table-bordered" id="result-table">
+	                    <thead>
+	                        <tr>
+	                            <th>Id</th>
+	                            <th>Equation</th>
+	                            <th>Result</th>
+	                            <th>Status</th>
+	                            <th>Created	</th>
+	                            <th>Session Id</th>
+	                        </tr>
+	                    </thead>
+	                    <tbody data-bind="foreach: results">
+	                        <tr data-bind=" attr: {class: status}">
+	                            <td scope="row" style="width: 8%"><span data-bind="text: id"></td>
+	                            <td><span data-bind="text: equation" ></span></td>
+	                            <td style="width: 10%"><span data-bind="text: result"></span></td>
+	                            <td style="width: 10%"><span data-bind="text: status" ></span></td>
+	                            <td style="width: 15%"><span data-bind="text: moment(created_date()).format('DD/MM/YYYY')" ></span></td>
+	                            <td style="width: 18%"><span data-bind="text: sessionToken" ></span></td>
+	                        </tr>
+	                    </tbody>
+	                </table>
+	            </div>					
+			</section>
+		</div>
+     </div>
+ <!-- charts -->
+	 <div class="row-fluid">
+		  <div class="col-lg-6" style="padding-left: 0px;">
+			<section class="box">
+				<div style="text-align: left;" class="chart-header">
+				 <div id="overview-pie-chart" style="height: 510px;" ></div>					
+				</div>
+			</section>
+		</div>
+		<div class="col-lg-6">
+			<section class="box">
+				<div style="text-align: left;" class="chart-header">
+				 <div id="overview-line-chart"  style="height: 510px;"></div>					
+				</div>
+			</section>
+		</div>
+     </div>
+     <div class="row-fluid">
+		  <div class="col-lg-12" style="padding-left: 0px;">
+			<section class="box">
+				<div style="text-align: left;" class="chart-header">
+				 <div id="overview-column-chart" style="height: 510px;" ></div>					
+				</div>
+			</section>
+		</div>
+     </div>
+  </div>
+   
+</body>
+<script  src="@routes.Assets.versioned("javascripts/canvasjs.min.js")" type="text/javascript" > </script>
+<script src="@routes.Assets.versioned("javascripts/moment.js")" type="text/javascript" ></script>
+<script src="@routes.Assets.versioned("javascripts/dashboard.js")" type="text/javascript" ></script>
+<script type="text/javascript">
+loadDashboard();
+</script>
+</html>
