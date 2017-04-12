@@ -5,6 +5,9 @@ operator follows all of its operands, in contrast to Polish notation
 postfix notation. It does not need any parentheses as long as each 
 operator has a fixed number of operands.
 
+# Wiki
+https://en.wikipedia.org/wiki/Reverse_Polish_notation
+
 
 # Problem Statement
 * Create a Web application with two routes /rpn and 
